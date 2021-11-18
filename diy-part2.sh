@@ -18,9 +18,12 @@ sed -i 's/net.netfilter.nf_conntrack_max=.*/net.netfilter.nf_conntrack_max=65535
 sed -i 's/192.168.1.1/172.16.1.1/g' package/base-files/files/bin/config_generate
 #修改主机名
 sed -i 's/OpenWrt/LEDE/g' package/base-files/files/bin/config_generate
-#修改默认ssid
-sed -i 's/OpenWrt/Chenmo/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 #修改默认主题
 #sed -i 's/bootstrap/argon_mc2/g' feeds/luci/modules/luci-base/root/etc/config/luci
 #修改默认密码
 sed -i 's/root::0:0:99999:7:::/root:$1$UgbVA8s.$RcRPmyW2APxIIVWPU1vP6.:0:0:99999:7:::/g' /etc/shadow
+#修改默认wifi
+sed -i '/set wireless.default_radio${devidx}.encryption=none/a\                        set wireless.default_radio${devidx}.key=2914889443' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/set wireless.default_radio${devidx}.encryption=none/set wireless.default_radio${devidx}.encryption=psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/wireless.default_radio${devidx}.ssid=OpenWrt/wireless.default_radio${devidx}.ssid=Chenmo/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
