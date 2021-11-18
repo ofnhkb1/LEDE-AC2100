@@ -22,3 +22,5 @@ sed -i 's/OpenWrt/LEDE/g' package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/Chenmo/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #修改默认主题
 #sed -i 's/bootstrap/argon_mc2/g' feeds/luci/modules/luci-base/root/etc/config/luci
+#修改默认密码
+sed -i 's/root::0:0:99999:7:::/root:$1$UgbVA8s.$RcRPmyW2APxIIVWPU1vP6.:0:0:99999:7:::/g' /etc/shadow
