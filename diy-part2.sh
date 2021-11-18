@@ -21,8 +21,8 @@ sed -i 's/OpenWrt/LEDE/g' package/base-files/files/bin/config_generate
 #修改默认主题
 #sed -i 's/bootstrap/argon_mc2/g' feeds/luci/modules/luci-base/root/etc/config/luci
 #修改默认密码
-#sed -i 's/root::0:0:99999:7:::/root:$1$UgbVA8s.$RcRPmyW2APxIIVWPU1vP6.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
-sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF/$1$UgbVA8s.$RcRPmyW2APxIIVWPU1vP6/g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/root::0:0:99999:7:::/root:$1$UgbVA8s.$RcRPmyW2APxIIVWPU1vP6.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
+#sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF/$1$UgbVA8s.$RcRPmyW2APxIIVWPU1vP6/g' package/lean/default-settings/files/zzz-default-settings
 #修改默认wifi以及wifi密码
 sed -i '/set wireless.default_radio${devidx}.encryption=none/a\                        set wireless.default_radio${devidx}.key=2914889443' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i 's/set wireless.default_radio${devidx}.encryption=none/set wireless.default_radio${devidx}.encryption=psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
