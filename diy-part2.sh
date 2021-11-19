@@ -27,3 +27,14 @@ sed -i 's/root::0:0:99999:7:::/root:$1$UgbVA8s.$RcRPmyW2APxIIVWPU1vP6.:0:0:99999
 sed -i '/set wireless.default_radio${devidx}.encryption=none/a\                        set wireless.default_radio${devidx}.key=2914889443' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i 's/set wireless.default_radio${devidx}.encryption=none/set wireless.default_radio${devidx}.encryption=psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i 's/wireless.default_radio${devidx}.ssid=OpenWrt/wireless.default_radio${devidx}.ssid=Chenmo/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#修改默认的配置文件
+sed -i '/exit 0/d' package/lean/default-settings/files/zzz-default-settings
+ehco 'uci set luci.main.mediaurlbase=/luci-static/argon_mc2' >> package/lean/default-settings/files/zzz-default-settings
+ehco 'uci commit luci' >> package/lean/default-settings/files/zzz-default-settings
+# ehco '' >> package/lean/default-settings/files/zzz-default-settings
+# ehco '' >> package/lean/default-settings/files/zzz-default-settings
+# ehco '' >> package/lean/default-settings/files/zzz-default-settings
+# ehco '' >> package/lean/default-settings/files/zzz-default-settings
+# ehco '' >> package/lean/default-settings/files/zzz-default-settings
+
+echo 'exit 0' >> package/lean/default-settings/files/zzz-default-settings
