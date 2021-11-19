@@ -37,9 +37,9 @@ ehco 'uci commit luci' >> package/lean/default-settings/files/zzz-default-settin
 # ehco '' >> package/lean/default-settings/files/zzz-default-settings
 # ehco '' >> package/lean/default-settings/files/zzz-default-settings
 #添加默认旁路由防火墙
-# ehco "echo '#桥接' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
-# ehco "echo '#iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
-# ehco "echo '#非桥接' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
-# ehco "echo '#iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
+ehco "echo '#桥接' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
+ehco "echo '#iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
+ehco "echo '#非桥接' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
+ehco "echo '#iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
 
 echo 'exit 0' >> package/lean/default-settings/files/zzz-default-settings
