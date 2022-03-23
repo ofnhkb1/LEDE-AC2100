@@ -95,7 +95,7 @@ jobs:
 
     - name: Echo custom configuration
       run: |
-        cat $CONFIG_FILE openwrt/.config
+        cat $CONFIG_FILE
 
     - name: Download package
       id: package
