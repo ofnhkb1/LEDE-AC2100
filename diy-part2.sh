@@ -29,17 +29,17 @@ sed -i 's/set wireless.default_radio${devidx}.encryption=none/set wireless.defau
 sed -i 's/wireless.default_radio${devidx}.ssid=OpenWrt/wireless.default_radio${devidx}.ssid=Chenmo/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #修改默认的配置文件
 sed -i '/exit 0/d' package/lean/default-settings/files/zzz-default-settings
-ehco 'uci set luci.main.mediaurlbase=/luci-static/argon_mc2' >> package/lean/default-settings/files/zzz-default-settings
-ehco 'uci commit luci' >> package/lean/default-settings/files/zzz-default-settings
+echo 'uci set luci.main.mediaurlbase=/luci-static/argon_mc2' >> package/lean/default-settings/files/zzz-default-settings
+echo 'uci commit luci' >> package/lean/default-settings/files/zzz-default-settings
 
 
-# ehco '' >> package/lean/default-settings/files/zzz-default-settings
-# ehco '' >> package/lean/default-settings/files/zzz-default-settings
-# ehco '' >> package/lean/default-settings/files/zzz-default-settings
+# echo  '' >> package/lean/default-settings/files/zzz-default-settings
+# echo  '' >> package/lean/default-settings/files/zzz-default-settings
+# echo  '' >> package/lean/default-settings/files/zzz-default-settings
 #添加默认旁路由防火墙
-ehco "echo '#桥接' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
-ehco "echo '#iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
-ehco "echo '#非桥接' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
-ehco "echo '#iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
+echo "echo '#桥接' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
+echo "echo '#iptables -t nat -I POSTROUTING -o br-lan -j MASQUERADE' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
+echo "echo '#非桥接' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
+echo "echo '#iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE' >> /etc/firewall.user" >> package/lean/default-settings/files/zzz-default-settings
 
 echo 'exit 0' >> package/lean/default-settings/files/zzz-default-settings
