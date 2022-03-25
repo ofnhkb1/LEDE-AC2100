@@ -23,9 +23,8 @@ echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.de
 echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 
 #修正easymesh无限重启
-#sed -i '/routing/d' feeds.conf.default
-#src-git routing https://git.openwrt.org/feed/routing.git^a7b79a1d4fce4f443854115ee4b2ed2aafba5c06
-
+sed -i '/routing/d' feeds.conf.default
+echo 'src-git routing https://git.openwrt.org/feed/routing.git^a7b79a1d4fce4f443854115ee4b2ed2aafba5c06' >>feeds.conf.default
 
 mkdir -p package/custom
 cd package/custom
